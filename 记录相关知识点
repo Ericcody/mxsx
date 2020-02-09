@@ -1,2 +1,9 @@
+git 安装 —— pycharm配置连接 —— 配置git仓库VCS中GIT里面操作 - add到暂存区 - commit到本地仓库 - push到github
 第六课
 restful api的使用，以及怎么看官方文档
+rest_framework的 viewset的使用以及mixin的使用
+最新版本的django-filter  参数名字已经由name 更改为field_name
+前后端的变量名必须一致
+
+第七课
+

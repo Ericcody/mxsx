@@ -48,9 +48,13 @@ INSTALLED_APPS = [
     'user_operation',
     'DjangoUeditor',
     'rest_framework',
+    'django_filters',
+    'coreschema',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -141,3 +145,18 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 # 设置media的路径
 MEDIA_URL="/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+# 定义分页
+# REST_FRAMEWORK = {
+#     'PAGE_SIZE': 10,
+# }
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+    )
+}
